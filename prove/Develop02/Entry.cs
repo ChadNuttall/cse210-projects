@@ -30,7 +30,7 @@ namespace DailyJournal
             return _date;
         }
 
-        public override string ToString() 
+        public override string ToString() // Overriding allows for sections to be described in final output as Date: Promt:
         {
             return $"\nDate: {_date} - Prompt: {_prompt} \n{_response}\n"; 
         }
