@@ -2,7 +2,7 @@ using System;
 
 namespace DailyJournal
 {
-    class Entry
+    class Entry // This is patterned after Learning 02 Job.cs
     {
         public string _prompt;
         public string _response;
@@ -10,7 +10,7 @@ namespace DailyJournal
 
         public Entry(string prompt, string response, string date)
         {
-            _prompt = prompt;
+            _prompt = prompt; 
             _response = response;
             _date = date;
         }
@@ -30,9 +30,9 @@ namespace DailyJournal
             return _date;
         }
 
-        public override string ToString()
+        public override string ToString() 
         {
-            return $"\nDate: {_date} - Prompt: {_prompt} \n{_response}\n";
+            return $"\nDate: {_date} - Prompt: {_prompt} \n{_response}\n"; 
         }
     }
 }
