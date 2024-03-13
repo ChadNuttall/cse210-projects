@@ -4,9 +4,11 @@ class Words
 {
     private readonly List<string> _wordsList; // Encapsulate list of individual words in scripture as _wordsList
     private int _wordsCount; // Encapsulate Total number of words
+    private readonly Reference _reference; // Encapsulate the scripture reference
 
-    public Words(Scripture scripture)
+    public Words(Reference reference, Scripture scripture)
     {
+        _reference = reference;
         _wordsList = scripture.ToString().Split(" ").ToList(); // Split the scripture text into words and store them in the list
         _wordsCount = _wordsList.Count; // Count how many words are in the list
     }
@@ -31,7 +33,7 @@ class Words
 
     public override string ToString()
     {
-        return string.Join(" ", _wordsList); // Our updated list words and hidden words
+        return $"{_reference} {string.Join(" ", _wordsList)}"; // Our updated list words and hidden words
     }
 
     public bool RemainingWords()
