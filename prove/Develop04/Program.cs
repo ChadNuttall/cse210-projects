@@ -3,7 +3,7 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   
         Console.WriteLine("Welcome to the Mindfulness Program!");
         Console.WriteLine();
         bool running = true;
@@ -23,18 +23,23 @@ class Program
             {   
                 //Breathing
                 case 1:
-                    Console.WriteLine("Breathing Activity is under constuction.\n");
+                    Console.Clear();
+                    BreathingActivity breathing = new BreathingActivity();
+                    breathing.RunBreathingActivity();
                     break;
                 //Reflecting
                 case 2:
+                    Console.Clear();
                     Console.WriteLine("Reflecting Activity is under constuction.\n");
                     break;
                 //Listing
                 case 3:
+                    Console.Clear();
                     Console.WriteLine("Listing Activity is under constuction.\n");
                     break;
                 //Quit
                 case 4:
+                    Console.Clear();
                     running = false;
                     Console.WriteLine("Have a nice day!");
                     break;
