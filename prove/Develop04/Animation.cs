@@ -2,14 +2,17 @@ using System;
 
 public static class Animation
 {
+    private static List<string> _spinnerCharacters;
+
     //Spinner Animation
     public static void DisplaySpinner(int runTime)
     {
-        List<string> spinnerCharacters = new List<string>();
-        spinnerCharacters.Add("|");
-        spinnerCharacters.Add("/");
-        spinnerCharacters.Add("-");
-        spinnerCharacters.Add("\\");
+        _spinnerCharacters = new List<string>{
+            "|",
+            "/",
+            "-",
+            "\\"
+        };
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(runTime);
@@ -17,14 +20,14 @@ public static class Animation
 
        while (DateTime.Now < endTime)
        {
-            string character = spinnerCharacters[spinCount];
+            string character = _spinnerCharacters[spinCount];
             Console.Write(character);
             Thread.Sleep(750);
             Console.Write("\b \b");
             
             spinCount++;
 
-            if (spinCount >= spinnerCharacters.Count){
+            if (spinCount >= _spinnerCharacters.Count){
                 spinCount = 0;
             }
 
@@ -32,23 +35,11 @@ public static class Animation
 
         Console.Write(" ");
     }
-    //Breathing Animations
-    //Breath In
-    public static void CountIn()
-    {
-        for (int i = 4; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
-    }
 
-    //Breath Out
-    public static void CountOut()
+    //Count Down Animation
+    public static void DislplayCountDown(int runTime)
     {
-        for (int i = 6; i > 0; i--)
-        {
+        for (int i = runTime; i > 0; i--){
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");

@@ -1,5 +1,6 @@
 using System;
 
+// Base class for all Activities
 public class Activity
 {
     protected string _startingMessage;
