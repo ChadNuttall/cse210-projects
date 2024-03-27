@@ -1,5 +1,6 @@
 using System;
 
+// Class for breathing activity. Inheriting from Activity
 public class BreathingActivity : Activity
 {
     public BreathingActivity() : base()
@@ -18,18 +19,18 @@ public class BreathingActivity : Activity
 
     public void DisplayBreathing()
     {
-        int runTime = GetSessionLength() * 1000;
-        int intervalTime = 10000;
-        int intervals = runTime / intervalTime;
+        int runTime = GetSessionLength() * 1000; // Convert from seconds to milliseconds
+        int intervalTime = 10000; // Interval time for breathing in and out
+        int intervals = runTime / intervalTime; // Calculate number of intervals based on session length
 
         for(int i = 0; i < intervals; i++)
         {
             Console.Write("Breathe in... ");
-            Animation.CountIn();
+            Animation.DislplayCountDown(4);
             Console.WriteLine();
             
             Console.Write("Breathe out... "); 
-            Animation.CountOut();
+            Animation.DislplayCountDown(6);
             Console.WriteLine();
         }
     }
